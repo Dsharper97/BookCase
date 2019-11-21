@@ -4,7 +4,7 @@
     android:id="@+id/bookDetailsContainer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BookDetailsFragment">
+    tools:context="edu.temple.temple.BookDetailsFragment">
 
     <TextView
         android:id="@+id/tvDetails"

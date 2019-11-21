@@ -1,17 +1,16 @@
-package edu.temple.cis3515_bookcase;
+package edu.temple.temple;
 
-import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import java.util.ArrayList;
+
+import edu.temple.cis3515_bookcase.R;
 
 
 /**

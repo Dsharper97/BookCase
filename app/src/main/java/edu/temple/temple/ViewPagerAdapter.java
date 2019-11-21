@@ -1,4 +1,4 @@
-package edu.temple.cis3515_bookcase;
+package edu.temple.temple;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;

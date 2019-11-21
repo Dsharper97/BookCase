@@ -1,4 +1,4 @@
-package edu.temple.cis3515_bookcase;
+package edu.temple.temple;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,7 +8,9 @@ import android.util.Log;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-    public class BookCaseActivity extends AppCompatActivity implements BookListFragment.OnListClickListener {
+import edu.temple.cis3515_bookcase.R;
+
+public class BookCaseActivity extends AppCompatActivity implements BookListFragment.OnListClickListener {
 
     Boolean twoPanes;
     ArrayList<String> books;

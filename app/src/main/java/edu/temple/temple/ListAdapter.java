@@ -1,4 +1,4 @@
-package edu.temple.cis3515_bookcase;
+package edu.temple.temple;
 
 import android.content.Context;
 import android.view.View;
