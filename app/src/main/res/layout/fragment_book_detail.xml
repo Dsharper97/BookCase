@@ -6,7 +6,7 @@
     tools:context=".BookDetailsFragment">
 
     <TextView
-        android:id="@+id/tv_name"
+        android:id="@+id/name"
         android:textColor="#333"
         android:textSize="18sp"
         android:layout_centerInParent="true"
