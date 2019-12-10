@@ -7,7 +7,7 @@
     tools:context="edu.temple.temple.BookDetailsFragment">
 
     <TextView
-        android:id="@+id/tvDetails"
+        android:id="@+id/viewDetails"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 </FrameLayout>

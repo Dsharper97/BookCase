@@ -45,9 +45,27 @@ public class BookListFragment extends Fragment {
      */
     // TODO: Rename and change types and number of parameters
     public static BookListFragment newInstance(Bundle b) {
-        BookListFragment fragment = new BookListFragment();
-        fragment.setArguments(b);
-        return fragment;
+        BookListFragment bookListFrag = new BookListFragment();
+        bookListFrag.setArguments(b);
+        return bookListFrag;
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        View V = inflater.inflate(R.layout.fragment_book_list, container, false);
+
+        ListView listView = V.findViewById(R.id.lvBooks);
+
+        listView.setAdapter(new ListAdapter(getActivity(),books));
+        listView.setOnItemClickListener(new ListView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                mListener.displayBookDetails(((TextView) view).getText().toString());
+            }
+        });
+        return V;
     }
 
     @Override
@@ -56,27 +74,6 @@ public class BookListFragment extends Fragment {
         if (getArguments() != null) {
             books = getArguments().getStringArrayList(ARG_BOOKS);
         }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_book_list, container, false);
-
-        ListView lv = ((ListView)v.findViewById(R.id.lvBooks));
-
-        lv.setAdapter(new ListAdapter(getActivity(),books));
-        lv.setOnItemClickListener(new ListView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                //mListener.displayBookDetails(position);
-                mListener.displayBookDetails(((TextView) view).getText().toString());
-            }
-        });
-
-
-        return v;
     }
 
     @Override
@@ -113,6 +110,6 @@ public class BookListFragment extends Fragment {
      */
     public interface OnListClickListener {
         // TODO: Update argument type and name
-        void displayBookDetails(String title);
+        void displayBookDetails(String Title);
     }
 }

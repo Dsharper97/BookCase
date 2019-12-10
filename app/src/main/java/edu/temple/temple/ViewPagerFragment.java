@@ -30,8 +30,8 @@ public class ViewPagerFragment extends Fragment {
     ArrayList<String> books;
     ArrayList<Fragment> fragments;
 
-    ViewPager vp;
-    ViewPagerAdapter vpa;
+    ViewPager viewPager;
+    ViewPagerAdapter viewPagerAdapter;
 
     private OnFragmentInteractionListener mListener;
 
@@ -61,42 +61,22 @@ public class ViewPagerFragment extends Fragment {
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+    public View onCreateView(LayoutInflater Inflater, ViewGroup Container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_view_pager, container, false);
+        View V = Inflater.inflate(R.layout.fragment_view_pager, Container, false);
 
         fragments = new ArrayList<>(books.size());
         for (int i = 0; i < books.size(); i++) {
-            Fragment bdf = BookDetailsFragment.newInstance(books.get(i));
-            fragments.add(bdf);
+            Fragment bookDetailFrag = BookDetailsFragment.newInstance(books.get(i));
+            fragments.add(bookDetailFrag);
         }
-        vpa = new ViewPagerAdapter(getChildFragmentManager(),fragments);
+        viewPagerAdapter = new ViewPagerAdapter(getChildFragmentManager(),fragments);
 
-        vp = v.findViewById(R.id.vp);
-        vp.setAdapter(vpa);
-        //vp.setAdapter(new ViewPagerAdapter(getChildFragmentManager()));
+        viewPager = V.findViewById(R.id.viewPager);
+        viewPager.setAdapter(viewPagerAdapter);
 
-        return v;
+        return V;
     }
-/*
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
-        } else {
-            throw new RuntimeException(context.toString()
-                    + " must implement OnFragmentInteractionListener");
-        }
-    }
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-*/
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated

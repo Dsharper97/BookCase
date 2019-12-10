@@ -10,36 +10,36 @@ import java.util.ArrayList;
 
 public class ListAdapter extends BaseAdapter {
 
-    Context context;
-    ArrayList<String> data;
+    Context Context;
+    ArrayList<String> Data;
     public ListAdapter(Context context, ArrayList<String> data){
-        this.context = context;
-        this.data = data;
+        this.Context = context;
+        this.Data = data;
     }
 
     @Override
     public int getCount() {
-        return data.size();
+        return Data.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return data.get(position);
+        return Data.get(position);
     }
 
     @Override
-    public long getItemId(int position) {
-        return position;
+    public long getItemId(int Position) {
+        return Position;
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        TextView label = new TextView(context);
-        label.setId(position);
-        label.setText(data.get(position));
-        label.setTextSize(20);
-        label.setPadding(16, 25, 16, 25);
+    public View getView(int Position, View convertView, ViewGroup Parent) {
+        TextView Label = new TextView(Context);
+        Label.setId(Position);
+        Label.setText(Data.get(Position));
+        Label.setTextSize(20);
+        Label.setPadding(16, 25, 16, 25);
 
-        return label;
+        return Label;
     }
 }

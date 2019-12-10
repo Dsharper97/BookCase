@@ -11,14 +11,14 @@ import edu.temple.cis3515_bookcase.R;
 
 
 public class BookDetailsFragment extends Fragment {
-    View v;
+    View V;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     public static final String ARG_DETAILS = "details_displayed";
 
     // TODO: Rename and change types of parameters
-    private String details;
+    private String Details;
 
     public BookDetailsFragment() {
         // Required empty public constructor
@@ -43,34 +43,23 @@ public class BookDetailsFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            details = getArguments().getString(ARG_DETAILS);
+            Details = getArguments().getString(ARG_DETAILS);
         }
     }
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater Inflater, ViewGroup Container,Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        v = inflater.inflate(R.layout.fragment_book_details, container, false);
-
-        TextView tv = (TextView)v.findViewById(R.id.tvDetails);
-        tv.setText(details);
-        return v;
+        V = Inflater.inflate(R.layout.fragment_book_details, Container, false);
+        TextView textView =V.findViewById(R.id.viewDetails);
+        textView.setText(Details);
+        return V;
     }
 
-
-    public void displayDetails(int index){
+    public void displayDetails(String Title){
         //assert index > -1;
-        TextView tv = (TextView)v.findViewById(R.id.tvDetails);
-        tv.setText(getResources().getStringArray(R.array.books)[index]);
-
-    }
-
-
-    public void displayDetails(String title){
-        //assert index > -1;
-        TextView tv = (TextView)v.findViewById(R.id.tvDetails);
-        tv.setText(title);
+        TextView textView = V.findViewById(R.id.viewDetails);
+        textView.setText(Title);
 
     }
 }

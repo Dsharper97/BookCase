@@ -11,9 +11,9 @@ public class ViewPagerAdapter extends FragmentStatePagerAdapter {
 
     ArrayList<Fragment> fragments;
 
-    public ViewPagerAdapter(FragmentManager fm, ArrayList<Fragment> f) {
-        super(fm);
-        fragments = f;
+    public ViewPagerAdapter(FragmentManager fragmentManager, ArrayList<Fragment> fragmentArrayList) {
+        super(fragmentManager);
+        fragments = fragmentArrayList;
     }
 
     @Override
